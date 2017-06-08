@@ -1,7 +1,7 @@
 module ComicVineService
   class Search
 
-    def initialize(query, resources='volumes')
+    def initialize(query, resources='volume')
       @query = query
       @resources = resources
     end
