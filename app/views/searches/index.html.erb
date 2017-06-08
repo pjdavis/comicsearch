@@ -1,0 +1,3 @@
+<% @searches.each do |term, count| %>
+  <%= link_to term, search_path(term: term) %> <%= count %>
+<% end %>
