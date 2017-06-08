@@ -1,3 +1,3 @@
 <% @results.each do |result| %>
-<li><%= result.name %></li>
+<li><%= link_to result.name, volume_path(result.id) %></li>
 <% end %>

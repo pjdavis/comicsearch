@@ -7,7 +7,7 @@ module ComicVineService
     end
 
     def results
-      do_search.map{|vol| ComicVineService::Volume.new(vol)}
+      do_search.map{|vol| ComicVineService::VolumeResult.new(vol)}
     end
 
     private
