@@ -1,4 +1,11 @@
-<%= form_for @search do |f| %>
+<%= form_for @query do |f| %>
   <%= f.text_field :term %>
   <%= f.submit "search" %>
 <% end %>
+<br>
+past searches:
+<br>
+<% @queries.each do |query| %>
+<%= link_to query.term, query %> <%= query.searches.count %> <br>
+
+<% end  %>
