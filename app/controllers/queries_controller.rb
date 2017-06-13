@@ -20,6 +20,7 @@ class QueriesController < ApplicationController
 
   def show
     @query = Query.find(params[:id])
+    @searches = @query.searches
     @results = ComicVineService::Search.new(@query.term).results
   end
 
