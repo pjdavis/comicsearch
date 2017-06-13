@@ -1,3 +1,14 @@
-<% @searches.each do |term, count| %>
-  <%= link_to term, search_path(term: term) %> <%= count %>
-<% end %>
+<table>
+  <tr>
+    <td><%= link_to "search", searches_path(sort: 'term') %></td>
+    <td><%= link_to "date last searched", searches_path(sort: 'date') %></td>
+    <td><%= link_to "search count", searches_path(sort: 'count') %></td>
+  </tr>
+  <% @searches.each do |search| %>
+    <tr>
+      <td><%= search.term %></td>
+      <td><%= search.updated_at.strftime("%b %-d, %Y") %></td>
+      <td><%= search.searches.count %></td>
+    </tr>
+  <% end %>
+</table>

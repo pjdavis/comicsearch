@@ -1,7 +1,8 @@
 class SearchesController < ApplicationController
 
   def index
-    @searches = Search.past_searches
+    sort = params[:sort] || 'term'
+    @searches = Query.past_searches(sort)
   end
 
   def new
