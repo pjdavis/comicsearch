@@ -1,0 +1,3 @@
+<% @queries.each do |query| %>
+  <%= link_to query.term, query %> <%= query.searches.count %>
+<% end %>
