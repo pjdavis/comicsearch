@@ -13,7 +13,7 @@
   </tr>
   <tr>
     <td>description</td>
-    <td><%= @volume.description.html_safe %></td>
+    <td><%= @volume.description.try(:html_safe) %></td>
   </tr>
   <tr>
     <td>count_of_issues</td>
