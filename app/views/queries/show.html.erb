@@ -1,5 +1,9 @@
-<% @results.each do |result| %>
-<li><%= link_to result.name, volume_path(result.id) %></li>
+<% if @results.present? %>
+  <% @results.each do |result| %>
+  <li><%= link_to result.name, volume_path(result.id) %></li>
+  <% end %>
+<% else %>
+  "No Results"
 <% end %>
 
 <br />

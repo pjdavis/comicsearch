@@ -9,6 +9,12 @@
   </head>
 
   <body>
-    <%= yield %>
+    <div>
+      <%= link_to "history", searches_path %>
+      <%= link_to "search", root_path %>
+    </div>
+    <div>
+      <%= yield %>
+    </div>
   </body>
 </html>
