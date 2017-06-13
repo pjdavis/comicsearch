@@ -1,8 +1,5 @@
 class Search < ApplicationRecord
 
-  validates :term, presence: true
+  belongs_to :query, touch: true
 
-  def self.past_searches
-    group(:term).count
-  end
 end

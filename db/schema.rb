@@ -10,15 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170608135832) do
+ActiveRecord::Schema.define(version: 20170608165917) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "searches", force: :cascade do |t|
+  create_table "queries", force: :cascade do |t|
     t.string "term"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
+  create_table "searches", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "query_id"
+    t.index ["query_id"], name: "index_searches_on_query_id"
+  end
+
+  add_foreign_key "searches", "queries"
 end
