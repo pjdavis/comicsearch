@@ -2,7 +2,7 @@ class Query < ApplicationRecord
 
   has_many :searches
 
-  def self.past_searches(sort)
+  def self.past_searches(sort = 'date')
     self
     .left_joins(:searches)
     .group(:id)
